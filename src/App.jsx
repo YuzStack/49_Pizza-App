@@ -2,17 +2,20 @@ import React from 'react';
 import pizzaData from './data';
 import './index.css';
 
-function Pizza({ photoName, name, ingredients, price }) {
+function App() {
   return (
-    <div className='pizza'>
-      <img src={photoName} alt={name} />
-      <div>
-        <h3>{name}</h3>
-        <p>{ingredients}</p>
-        <span>${price}</span>
-      </div>
+    <div className='container'>
+      <Main>
+        <Header />
+        <Menu />
+      </Main>
+      <Footer />
     </div>
   );
+}
+
+function Main({ children }) {
+  return <main>{children}</main>;
 }
 
 function Header() {
@@ -36,8 +39,17 @@ function Menu() {
   );
 }
 
-function Main({ children }) {
-  return <main>{children}</main>;
+function Pizza({ photoName, name, ingredients, price }) {
+  return (
+    <div className='pizza'>
+      <img src={photoName} alt={name} />
+      <div>
+        <h3>{name}</h3>
+        <p>{ingredients}</p>
+        <span>${price}</span>
+      </div>
+    </div>
+  );
 }
 
 function Footer() {
@@ -52,20 +64,6 @@ function Footer() {
       {date.toLocaleTimeString()}.{' '}
       {`${isOpen ? "We're currently open!" : "Sorry, we're close."}`}
     </footer>
-  );
-
-  // return React.createElement("footer", null, "We're current open!");
-}
-
-function App() {
-  return (
-    <div className='container'>
-      <Main>
-        <Header />
-        <Menu />
-      </Main>
-      <Footer />
-    </div>
   );
 }
 
