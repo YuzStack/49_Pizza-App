@@ -171,6 +171,7 @@ body {
   font-weight: 500;
   background-color: #edc84b;
   padding: 1.4rem 3.2rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
 }
