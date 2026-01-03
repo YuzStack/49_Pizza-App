@@ -1,5 +1,5 @@
+import React from "react";
 import pizzaData from "./data";
-const path = "public/funghi.jpg";
 
 function Pizza() {
   return (
@@ -11,14 +11,42 @@ function Pizza() {
   );
 }
 
-function App() {
+function Header() {
+  return <h1>Fast React Pizza Co.</h1>;
+}
+
+function Menu() {
   return (
     <div>
-      <h1>Hello React!</h1>
+      <h2>Our menu:</h2>
       <Pizza />
       <Pizza />
       <Pizza />
     </div>
+  );
+}
+
+function Main({ children }) {
+  return <main>{children}</main>;
+}
+
+function Footer() {
+  return (
+    <footer>{new Date().toLocaleTimeString()}. We're current open!</footer>
+  );
+
+  // return React.createElement("footer", null, "We're current open!");
+}
+
+function App() {
+  return (
+    <>
+      <Main>
+        <Header />
+        <Menu />
+      </Main>
+      <Footer />
+    </>
   );
 }
 
