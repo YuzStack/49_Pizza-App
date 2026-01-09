@@ -102,7 +102,6 @@ body {
 .pizzas {
   list-style: none;
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
   gap: 4.8rem;
 }
 
